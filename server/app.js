@@ -2,11 +2,11 @@ const path = require('path');
 const express = require('express');
 const compression = require('compression');
 const favicon = require('serve-favicon');
-//const bodyParser = require('body-parser');
+// const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
 const expressHandlebars = require('express-handlebars');
 const helmet = require('helmet');
-const session = require('express-session'); 
+const session = require('express-session');
 
 const router = require('./router.js');
 
@@ -30,10 +30,10 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
 app.use(session({
-    key: 'sessionid', 
-    secret: 'Domo Arigato', 
-    resave: false, 
-    saveUninitialized: false,
+  key: 'sessionid',
+  secret: 'Domo Arigato',
+  resave: false,
+  saveUninitialized: false,
 }));
 app.engine('handlebars', expressHandlebars.engine({ defaultLayout: '' }));
 app.set('view engine', 'handlebars');
